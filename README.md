@@ -1,6 +1,13 @@
 # Autonomous-Navigation-Robot
 A complete ROS 2 navigation stack for an omnidirectional indoor robot, implemented as 14 Python source files + 1 YAML config across 5 directories.
 
+## 🚧 Project Status
+
+This project is currently in the development phase.  
+The README outlines the planned architecture and algorithms, while implementation is ongoing.
+
+Some sections (e.g., RL, MPC) represent planned or experimental components.
+
 ## Project Structure
 
 ```
