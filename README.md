@@ -141,3 +141,7 @@ All parameters live in [config.py](file:///d:/Welcome%20Robot%20Project/config.p
 | Fusion | `config.py` | `IR_WEIGHT=0.35`, `US_WEIGHT=0.40`, `CAM_WEIGHT=0.25` |
 | Recovery | `config.py` | `MAX_RECOVERY_ATTEMPTS=3` |
 | SLAM | `slam_toolbox_params.yaml` | `resolution=0.05`, `do_loop_closing=true` |
+
+## Current Status
+
+This project is currently in the early development phase. The software architecture and core navigation logic are being implemented using ROS 2 and Python, while hardware components are still being finalized. The system is designed modularly to support future integration of sensors and motor control using NanoClaw. Simulation and real-world testing will follow after initial implementation is complete.
