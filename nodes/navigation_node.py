@@ -147,7 +147,7 @@ class NavigationNode(Node):
         self._tf_listener = TransformListener(self._tf_buffer, self)
 
         # ── Publishers ──
-        self._pub_cmd = self.create_publisher(Twist, "/cmd_vel", 10)
+        self._pub_cmd = self.create_publisher(Twist, "/cmd_vel_nav", 10)
         self._pub_path = self.create_publisher(Path, "/planned_path", 10)
         self._pub_recovery_trigger = self.create_publisher(
             Bool, "/recovery/trigger", 10

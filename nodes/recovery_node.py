@@ -56,7 +56,7 @@ class RecoveryNode(Node):
         self._phase_start_time = self.get_clock().now()
 
         # ── Publishers ──
-        self._pub_cmd = self.create_publisher(Twist, "/cmd_vel", 10)
+        self._pub_cmd = self.create_publisher(Twist, "/cmd_vel_recovery", 10)
         self._pub_status = self.create_publisher(String, "/recovery/status", 10)
 
         # ── Subscribers ──
