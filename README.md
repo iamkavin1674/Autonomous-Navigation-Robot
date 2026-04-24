@@ -45,7 +45,11 @@ graph TB
     end
 
     subgraph RecoveryNode
-        REC["Stop → Backup → Rotate"]
+        REC["Stop / Backup / Rotate"]
+    end
+
+    subgraph CmdVelMuxNode
+        MUX["Priority Arbitration"]
     end
 
     subgraph External
@@ -58,15 +62,18 @@ graph TB
     CAM --> SF
     SF -->|danger_score, min_range, proximity_factor| SM
     SLAM -->|/map OccupancyGrid| SM
-    TF -->|map→base_link| SM
+    TF -->|map to base_link| SM
     SM --> AS
     AS -->|path| OC
-    OC -->|/cmd_vel Twist| Robot["Robot Motors"]
+    OC -->|/cmd_vel_nav P2| MUX
     SM -->|/recovery/trigger| REC
     REC -->|/recovery/status| SM
-    REC -->|/cmd_vel| Robot
+    REC -->|/cmd_vel_recovery P1| MUX
+    SM -.->|/cmd_vel_emergency P0| MUX
+    MUX -->|/cmd_vel| Robot["Robot Motors"]
     SM -.->|optional| N2
 ```
+    
 
 ---
 
