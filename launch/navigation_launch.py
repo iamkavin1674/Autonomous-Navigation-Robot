@@ -94,6 +94,16 @@ def generate_launch_description():
         output="screen",
     )
 
+    # ── 5. Cmd Vel Mux ───────────────────────
+    cmd_vel_mux_proc = ExecuteProcess(
+        cmd=[
+            "python3",
+            os.path.join(project_dir, "nodes", "cmd_vel_mux_node.py"),
+        ],
+        name="cmd_vel_mux_node",
+        output="screen",
+    )
+
     # ── Assemble ─────────────────────────────
     ld = LaunchDescription()
     ld.add_action(use_sim_time_arg)
@@ -104,5 +114,6 @@ def generate_launch_description():
     ld.add_action(sensor_fusion_proc)
     ld.add_action(navigation_proc)
     ld.add_action(recovery_proc)
+    ld.add_action(cmd_vel_mux_proc)
 
     return ld
