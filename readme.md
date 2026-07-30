@@ -55,10 +55,10 @@ All ROS‑2 components are launched together from **`launch/navigation_launch.py
 
 ```mermaid
 flowchart LR
-    Cam[Camera Node] --> Vision[Vision Core (face, QR, markers)]
+    Cam[Camera Node] --> Vision["Vision Core (face, QR, markers)"]
     Vision --> Rec[Receptionist Node]
     Rec --> LLMReq[llm_node: /llm_request]
-    LLMReq --> Gemini[gemini_interface → Gemini (MCP)]
+    LLMReq --> Gemini[gemini_interface → Gemini MCP]
     Gemini --> LLMResp[llm_node: /llm_response]
     LLMResp --> Rec
     Rec --> TTSReq[tts_node: /tts_request]
