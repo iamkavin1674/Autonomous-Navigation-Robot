@@ -52,6 +52,7 @@ All ROS‑2 components are launched together from **`launch/navigation_launch.py
 * Nodes exchange data over *topics* (e.g., `/camera/image_raw`, `/llm_request`). No direct function calls are used between nodes.
 
 ### 2.2 High‑level Data Flow
+
 ```mermaid
 flowchart LR
     Cam[Camera Node] --> Vision[Vision Core (face, QR, markers)]
